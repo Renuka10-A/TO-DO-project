@@ -1,1 +1,27 @@
-This Angular project is a simple To-Do List application that allows users to manage tasks effectively. The app includes two main components: one for displaying a list of tasks and one for adding/editing tasks. Users can view task details such as assigned person, status, due date, priority, and comments. Tasks can be added, edited, or deleted. The application is responsive, making it accessible on both desktop and mobile devices. The data is managed using a service that stores tasks in memory. Further enhancements can include backend integration and more advanced features.
+# TODOProject
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.0.
+
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
