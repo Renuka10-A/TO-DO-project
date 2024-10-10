@@ -1,0 +1,31 @@
+<div class="form-container">
+    <h2>{{ task ? 'Edit Task' : 'New Task' }}</h2>
+    <form (ngSubmit)="saveTask()">
+      <label for="assignedTo">Assigned To:</label>
+      <input type="text" id="assignedTo" [(ngModel)]="task.assignedTo" name="assignedTo" required />
+  
+      <label for="status">Status:</label>
+      <select id="status" [(ngModel)]="task.status" name="status">
+        <option value="Not Started">Not Started</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+  
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate" [(ngModel)]="task.dueDate" name="dueDate" required />
+  
+      <label for="priority">Priority:</label>
+      <select id="priority" [(ngModel)]="task.priority" name="priority">
+        <option value="Low">Low</option>
+        <option value="Normal">Normal</option>
+        <option value="High">High</option>
+      </select>
+  
+      <label for="comments">Description:</label>
+      <textarea id="comments" [(ngModel)]="task.comments" name="comments"></textarea>
+  
+      <button type="submit">{{ task ? 'Update' : 'Save' }}</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </form>
+  </div>
+  
