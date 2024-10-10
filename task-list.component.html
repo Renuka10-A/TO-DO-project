@@ -1,0 +1,48 @@
+<div class="task-container">
+    <div class="task-header">
+      <h2>Tasks</h2>
+      <div class="header-controls">
+        <button (click)="openNewTaskForm()" class="task-button">New Task</button>
+        <button (click)="refreshTasks()" class="task-button">Refresh</button>
+        <div class="search-container">
+          <input type="text" [(ngModel)]="searchTerm" placeholder="Search" class="search-box" />
+          <span class="search-icon">🔍</span> <!-- Search icon -->
+        </div>
+      </div>
+    </div>
+  
+    <div class="logo">
+      <span class="logo-text">Task</span>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Assigned To</th>
+          <th>Status</th>
+          <th>Due Date</th>
+          <th>Priority</th>
+          <th>Comments</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of filteredTasks()">
+          <td>
+            <input type="checkbox" [(ngModel)]="task.selected" /> {{ task.assignedTo }} <!-- Checkbox and user name -->
+          </td>
+          <td>{{ task.status }}</td>
+          <td>{{ task.dueDate | date: 'dd/MM/yyyy' }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.comments }}</td>
+          <td>
+            <button (click)="editTask(task)">Edit</button>
+            <button (click)="deleteTask(task)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <app-task-form *ngIf="showTaskForm" [task]="selectedTask" (close)="showTaskForm = false"></app-task-form>
+  </div>
+  
